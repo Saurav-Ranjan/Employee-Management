@@ -1,0 +1,34 @@
+
+<div class="edit-employee-container">
+  <h1>Edit Employee Details</h1>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Employee Name:</label>
+      <input id="name" type="text" [(ngModel)]="employee.name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role:</label>
+      <select id="role" [(ngModel)]="employee.role" name="role" required>
+        <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="fromDate">From Date:</label>
+      <input id="fromDate" type="date" [(ngModel)]="employee.fromDate" name="fromDate" required />
+    </div>
+
+    <div class="form-group">
+      <label for="toDate">To Date:</label>
+      <input id="toDate" type="date" [(ngModel)]="employee.toDate" name="toDate" required />
+    </div>
+
+
+    <div class="action-buttons">
+      <button type="button" (click)="onCancel()" class="cancel-btn">Cancel</button>
+      <button type="submit" class="save-btn">Save</button>
+    </div>
+  </form>
+</div>

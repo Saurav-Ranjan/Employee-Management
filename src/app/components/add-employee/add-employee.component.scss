@@ -1,0 +1,188 @@
+
+.add-employee-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    
+  }
+  
+  .add-employee-header {
+    background-color: #1DA1F2; 
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500px;
+    border-radius: 5px;
+  }
+  
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+
+.employee-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.input-container input,
+.input-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input {
+  padding-left: 30px;
+}
+
+.input-with-icon .fa-user {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.select-wrapper {
+   position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.select-wrapper i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #888; 
+}
+.input-container select {
+ 
+  width: 405px;
+}
+
+
+.date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.date-container .input-container {
+  flex: 1;
+}
+
+.date-arrow {
+  font-size: 20px;
+  color: #1DA1F2  ;
+  margin: 0 10px;
+  text-align: center;
+}
+
+
+.date-container .input-container input {
+  width: 100%;
+}
+
+
+.date-container .input-container {
+  margin-right: 10px;
+}
+
+.date-container .input-container:last-child {
+  margin-right: 0; 
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  gap: 10px;
+  width: 200px; 
+  border-radius: 10px;
+  
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 45%; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-btn {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+}
+
+.save-btn:hover {
+  background-color: #0d87c2;
+}
+
+.cancel-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.cancel-btn:hover {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header h2 {
+    font-size: 18px;
+  }
+
+  .date-container {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .date-arrow {
+    margin: 10px 0;
+  }
+
+  
+  .save-btn,
+  .cancel-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+    width: 50px;
+    height: 40px;
+    top: 874px;
+    left: 250px;
+    
+  }
+  .bottom-bar button {
+    width: 100px;
+  }
+}

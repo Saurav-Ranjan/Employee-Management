@@ -1,0 +1,76 @@
+
+<div class="add-employee-container">
+   
+    <header class="add-employee-header">
+      Add Employee Details
+    </header>
+  
+    <div class="container">
+    
+    
+      <form (ngSubmit)="onSubmit(employeeForm)" #employeeForm="ngForm" class="employee-form">
+    
+       
+        <div class="input-container">
+         
+          <div class="input-with-icon">
+            <i class="fa fa-user"></i>
+            <input
+              type="text"
+              id="employeeName"
+              name="name"
+              ngModel
+              required
+              placeholder="Employee name"
+            />
+          </div>
+        </div>
+    
+       
+        <div class="input-container">
+          
+          <div class="select-wrapper">
+            <i class="fa fa-suitcase"></i> 
+            <select class="select_item" id="role" name="role" ngModel required>
+            
+              <option value="" disabled selected>Select Role</option>
+              <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+            </select>
+          </div>
+        </div>
+
+       
+    
+        
+        <div class="date-container">
+          <div class="input-container">
+            
+            <input
+              type="date"
+              id="fromDate"
+              name="fromDate"
+              ngModel
+              required
+            />
+          </div>
+          <i class="fa fa-arrow-right date-arrow"></i>
+          <div class="input-container">
+            
+            <input
+              type="date"
+              id="toDate"
+              name="toDate"
+              ngModel
+              required
+            />
+          </div>
+        </div>
+    
+       
+        <div class="bottom-bar">
+          <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
+          <button type="submit" class="save-btn">Save</button>
+        </div>
+      </form>
+    </div>
+    

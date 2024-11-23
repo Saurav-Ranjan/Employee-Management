@@ -1,0 +1,59 @@
+
+<div class="employee-list-container">
+  <header class="employee-list-header">
+    Employee List
+  </header>
+<div class="container">
+  <div class="employee-section" *ngIf="currentEmployees.length">
+    <h2 class="employee-subheader">Current Employees</h2>
+   
+      
+        <div class="employee-info list-employee"  *ngFor="let employee of currentEmployees"
+         (swipeleft)="setActiveRow(employee.id)"
+        (swiperight)="clearActiveRow()">
+          
+          <span class="employee-name">{{ employee.name }}</span>
+          <span class="employee-role">{{ employee.role }}</span>
+          <span class="employee-dates">
+            From: {{ employee.fromDate | date }} To: {{ employee.toDate | date }}
+          </span>
+          <button  *ngIf="activeRow === employee.id" class="delete-btn" (click)="deleteEmployee(employee.id)">
+            <i class="fa fa-trash"></i>
+          </button>
+       
+        
+      </div>
+  </div>
+
+  <div class="employee-section" *ngIf="previousEmployees.length">
+    <h2 class="employee-subheader">Previous Employees</h2>
+    
+      <div class="employee-info list-employee"  *ngFor="let employee of previousEmployees"
+       (swipeleft)="setActiveRow(employee.id)"
+      (swiperight)="clearActiveRow()">
+        
+        <span class="employee-name">{{ employee.name }}</span>
+        <span class="employee-role">{{ employee.role }}</span>
+        <span class="employee-dates">
+          From: {{ employee.fromDate | date }} To: {{ employee.toDate | date }}
+        </span>
+        <button  *ngIf="activeRow === employee.id" class="delete-btn" (click)="deleteEmployee(employee.id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+      
+   
+   
+  </div>
+
+ 
+  <div *ngIf="!currentEmployees.length && !previousEmployees.length" class="no-employees">
+    <img src="../../../assets/no_records.png" class="image_No" alt="No Employees Found" />
+   
+  </div>
+
+  <button class="add-employee-btn" (click)="navigateToAddEmployee()">
+    <i class="fa fa-plus"></i>
+  </button>
+</div>
+</div>
